@@ -18,7 +18,8 @@ namespace ProgramFlow
         /// <returns><b>true</b> if <paramref name="value"/> is <b>false</b>; <b>false</b> if <paramref name="value"/> is <b>true</b>.</returns>
         public static bool InvertBoolean(bool value)
         {
-            // TODO: Fix this method so it passes all associated tests.
+            // TODO: Fix this method so it passes all associated tests
+            value = !(value);
             return value;
         }
 
@@ -30,7 +31,22 @@ namespace ProgramFlow
         public static DriverAction DriveSafelyIfElse(LightColor color)
         {
             // TODO: Fix this method so it passes all associated tests. An if-else statement must be used to return the correct values.
-            return (DriverAction)24;
+            if (color == LightColor.Red)
+            {
+                return DriverAction.Stop;
+            }
+            if (color == LightColor.Yellow)
+            {
+                return DriverAction.StopIfSafe;
+            }
+            if (color == LightColor.Green)
+            {
+                return DriverAction.ProceedWithCaution;
+            }
+            else
+            {
+                return DriverAction.Unknown;
+            }
         }
 
         /// <summary>
@@ -41,7 +57,19 @@ namespace ProgramFlow
         public static DriverAction DriveSafelySwitch(LightColor color)
         {
             // TODO: Fix this method so it passes all associated tests. A switch statement must be used to return the correct values.
-            return (DriverAction)24;
+            // int stopLight = color;
+           
+            switch (color)
+            {
+                case LightColor.Red:
+                    return DriverAction.Stop;
+                case LightColor.Yellow:
+                    return DriverAction.StopIfSafe;
+                case LightColor.Green:
+                    return DriverAction.ProceedWithCaution;
+                default:
+                    return DriverAction.Unknown;
+            }
         }
 
         /// <summary>
@@ -52,7 +80,16 @@ namespace ProgramFlow
         public static long ForSum(int[] values)
         {
             // TODO: Fix this method so it passes all associated tests. A for loop must be used to calculate the sum.
-            return -1;
+            Random r = new Random();
+            values = new int[] { r.Next(100), r.Next(100), r.Next(100), r.Next(100), r.Next(100) };
+            long total = 0;
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                total = total + values[i];
+            }
+
+            return total;
         }
 
         /// <summary>
@@ -63,7 +100,16 @@ namespace ProgramFlow
         public static long ForEachSum(int[] values)
         {
             // TODO: Fix this method so it passes all associated tests. A foreach loop must be used to calculate the sum.
-            return -1;
+            Random r = new Random();
+            values = new int[] { r.Next(100), r.Next(100), r.Next(100), r.Next(100), r.Next(100) };
+            long total = 0;
+
+            foreach (int digit in values)
+            {
+                total = total + digit;
+            }
+
+            return total;
         }
     }
 }
