@@ -35,11 +35,11 @@ namespace ProgramFlow
             {
                 return DriverAction.Stop;
             }
-            if (color == LightColor.Yellow)
+            else if (color == LightColor.Yellow)
             {
                 return DriverAction.StopIfSafe;
             }
-            if (color == LightColor.Green)
+            else if (color == LightColor.Green)
             {
                 return DriverAction.ProceedWithCaution;
             }
