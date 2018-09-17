@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,8 @@ namespace ProgramFlow
     /// </summary>
     public static class Flow
     {
+        public static string DriverAction { get; private set; }
+
         /// <summary>
         /// Returns the inverse value for a boolean.
         /// </summary>
@@ -19,9 +21,28 @@ namespace ProgramFlow
         public static bool InvertBoolean(bool value)
         {
             // TODO: Fix this method so it passes all associated tests.
+            if (value = false)
+            {
+                value = true;
+            }
+            else
+            {
+                value = false;
+            }
+            break;
+
+            if (value = true)
+            {
+                value = false;
+            }
+            else
+            {
+                value = true;
+            }
+            break:
+
             return value;
         }
-
         /// <summary>
         /// Returns the correct <see cref="DriverAction"/> value for each <see cref="LightColor"/> using an if-else statement.
         /// </summary>
@@ -30,6 +51,23 @@ namespace ProgramFlow
         public static DriverAction DriveSafelyIfElse(LightColor color)
         {
             // TODO: Fix this method so it passes all associated tests. An if-else statement must be used to return the correct values.
+            if (LightColor = "Green")
+            {
+                DriverAction = "ProceedWithCaution";
+            }
+            if else (LightColor = "Yellow")
+            {
+                DriverAction = "StopIfSafe";
+            }
+            if else (LightColor = "Red")
+            {
+                DriverAction = "Stop";
+            }
+            else
+            {
+                DriverAction = "Unknown";
+            }
+
             return (DriverAction)24;
         }
 
@@ -41,6 +79,21 @@ namespace ProgramFlow
         public static DriverAction DriveSafelySwitch(LightColor color)
         {
             // TODO: Fix this method so it passes all associated tests. A switch statement must be used to return the correct values.
+            switch (LightColor)
+            {
+                case "Green":
+                    DriverAction = "ProceedWithCaution";
+                    break;
+                case "Yellow":
+                    DriverAction = "StopIfSafe";
+                    break;
+                case "Red":
+                    DriverAction = "Stop";
+                    break;
+                default:
+                    DriverAction = "Unknown";
+                    break;
+            }
             return (DriverAction)24;
         }
 
@@ -52,6 +105,10 @@ namespace ProgramFlow
         public static long ForSum(int[] values)
         {
             // TODO: Fix this method so it passes all associated tests. A for loop must be used to calculate the sum.
+            for (int i = 0; <values.Length; ++i)
+            {
+                += values[i];
+            }
             return -1;
         }
 
@@ -63,6 +120,10 @@ namespace ProgramFlow
         public static long ForEachSum(int[] values)
         {
             // TODO: Fix this method so it passes all associated tests. A foreach loop must be used to calculate the sum.
+            foreach (values in int[])
+            {
+                values++; 
+            }
             return -1;
         }
     }
